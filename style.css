@@ -91,7 +91,7 @@ h1 {
     color: #E6F2BB;
     font-size: 30px;
     font-weight: bold;
-   /* margin-bottom: 8px;*/
+    margin-bottom: 8px;
     
 }
 .tempInfo sup {
@@ -100,8 +100,10 @@ h1 {
 }
 .tMin, 
 .tMax{
-    font-size: 11px;
+    font-size: 8px;
     font-weight: bold;
+    margin: auto;
+    padding-bottom: auto;
 }
 .tMax{
     color:red;
@@ -113,6 +115,7 @@ h1 {
 .ventoInfo span {
     font-size: 15px;
     font-weight: normal;
+    margin: auto;
 }
 .ventoArea {
     width: 50px;
@@ -120,7 +123,7 @@ h1 {
     border: 1px solid #FFF;
     border-radius: 50%;
     margin: auto;
-    margin-top: 68px;
+    margin-top:65px;
     padding-left: 25px;
     padding-top: 25px;
 }
@@ -129,6 +132,7 @@ h1 {
     height: 1px;
     background-color: #FFF;
     transform-origin: left;
+    margin: auto;
 }
 
 .aviso {
@@ -176,3 +180,8 @@ footer {
 .spinner-border{
     display:none;
 }
+
+img{
+    padding-top: 8px;
+}
+

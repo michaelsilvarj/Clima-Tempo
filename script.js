@@ -1,15 +1,16 @@
 document.querySelector('.busca').addEventListener('submit', async (event)=>{
     event.preventDefault();
-   
+    
+    //setTimeout(showInfo,5000);
+
     let input = document.querySelector('#searchInput').value;
 
     if(input !== ''){
         clearInfo();
+
         showWarning('carregando...');
         document.querySelector('.spinner-border').style.display= 'block';
 
-         
-        
         let results = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=
         ${encodeURI(input)}&appid=30adbdaeef18d4b04ed368bdfe15ef2e&units=metric&lang=pt_br`);
         
@@ -38,6 +39,7 @@ document.querySelector('.busca').addEventListener('submit', async (event)=>{
         } else {
             clearInfo();
             showWarning('Não encontramos esta localização.');
+            document.querySelector('.spinner-border').style.display= 'none';
         }
 
     } else {
@@ -46,21 +48,23 @@ document.querySelector('.busca').addEventListener('submit', async (event)=>{
     }  
 });
 
+
+
+
 //habilita Informações em tela
 function showInfo (obj){
     showWarning('');
     document.querySelector('.spinner-border').style.display= 'none';
     
     document.querySelector('.titulo').innerHTML = `${obj.name},${obj.country}`;
-    document.querySelector('.tempInfo').innerHTML = `${parseInt(obj.temp)} <sup>ºC<sup>`;
-    document.querySelector('.tMax').innerHTML = `max: ${parseInt(obj.temp_max)} <sup>ºC</sup>`;
-    document.querySelector('.tMin').innerHTML = `min: ${parseInt(obj.temp_min)} <sup>ºC</sup>`;   
+    document.querySelector('.tempInfo').innerHTML = `${Math.round(obj.temp)} <sup>ºC<sup>`;
+    document.querySelector('.tMax').innerHTML = `max: ${Math.round(obj.temp_max)} <sup>ºC</sup><br>`;
+    document.querySelector('.tMin').innerHTML = `min: ${Math.round(obj.temp_min)} <sup>ºC</sup>`;   
     document.querySelector('.ventoInfo').innerHTML = `${obj.windSpeed} <span>km/h</span>`;
 
     document.querySelector('.temp img').setAttribute('src', `http://openweathermap.org/img/wn/${obj.tempIcon}@2x.png`);
     document.querySelector('.sky').innerHTML = `${obj.sky}`;
     document.querySelector('.ventoPonto').style.transform = `rotate(${obj.windAngle-90}deg)`;
-    //let calc = `rotate(${obj.windAngle-90}deg)`
     document.querySelector('.rosaDoVento').innerHTML = ` ${orientationAng(obj.windAngle)}`;
     document.querySelector('.resultado').style.display = 'block';
     
