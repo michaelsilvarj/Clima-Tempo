@@ -6,7 +6,6 @@ document.querySelector('.busca').addEventListener('submit', async (event)=>{
     if(input !== ''){
         clearInfo();
         showWarning('carregando...');
-        document.querySelector('.spinner-border').style.display= 'block';
 
          
         
@@ -30,7 +29,6 @@ document.querySelector('.busca').addEventListener('submit', async (event)=>{
                 tempIcon: json.weather[0].icon,
                 windSpeed: json.wind.speed,
                 windAngle: json.wind.deg,
-                //windDirectionName: json.wind.direction.name,
                 sky: json.weather[0].description,
             });
 
@@ -49,7 +47,7 @@ document.querySelector('.busca').addEventListener('submit', async (event)=>{
 //habilita Informações em tela
 function showInfo (obj){
     showWarning('');
-    document.querySelector('.spinner-border').style.display= 'none';
+
     
     document.querySelector('.titulo').innerHTML = `${obj.name},${obj.country}`;
     document.querySelector('.tempInfo').innerHTML = `${parseInt(obj.temp)} <sup>ºC<sup>`;
@@ -58,9 +56,9 @@ function showInfo (obj){
     document.querySelector('.ventoInfo').innerHTML = `${obj.windSpeed} <span>km/h</span>`;
 
     document.querySelector('.temp img').setAttribute('src', `http://openweathermap.org/img/wn/${obj.tempIcon}@2x.png`);
-    document.querySelector('.sky').innerHTML = `${obj.sky}`;
+    document.querySelector('.sky').innerHTML = `<br>${obj.sky}`;
     document.querySelector('.ventoPonto').style.transform = `rotate(${obj.windAngle-90}deg)`;
-    //let calc = `rotate(${obj.windAngle-90}deg)`
+    let calc = `${obj.windAngle-90}deg`
     document.querySelector('.rosaDoVento').innerHTML = ` ${orientationAng(obj.windAngle)}`;
     document.querySelector('.resultado').style.display = 'block';
     
@@ -77,7 +75,7 @@ function showWarning(msg) {
     document.querySelector('.aviso').innerHTML = msg;
 }
 
-//Função para determinar direção vento
+//Função ara determinar direção vento
 function orientationAng(angulo) {
 
 

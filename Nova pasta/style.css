@@ -50,7 +50,7 @@ h1 {
 }
 
 .resultado {
-    width: 300px;
+    width: 330px;
     display: none;
     border: 1px solid #FFF;
     margin-top: 20px;
@@ -91,15 +91,13 @@ h1 {
     color: #E6F2BB;
     font-size: 30px;
     font-weight: bold;
-   /* margin-bottom: 8px;*/
-    
+    margin-bottom: 8px;
 }
 .tempInfo sup {
     font-size: 15px;
     font-weight: normal;
 }
-.tMin, 
-.tMax{
+.minMax{
     font-size: 11px;
     font-weight: bold;
 }
@@ -120,7 +118,7 @@ h1 {
     border: 1px solid #FFF;
     border-radius: 50%;
     margin: auto;
-    margin-top: 68px;
+    margin-top: 20px;
     padding-left: 25px;
     padding-top: 25px;
 }
@@ -142,37 +140,3 @@ footer {
     font-size: 15px;
 }
 
-.menu{
-    margin-top: 20px;
-}
-
-
-
-.minmax{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    margin-top: -1px;
-}
-
-.minmax p{
-    font-size: 10px;
-    line-height: 10px;
-    
-}
-.sky{
-    margin-top: -20px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.rosaDoVento{
-    margin-top: 6px;
-    color: white;
-}
-
-.spinner-border{
-    display:none;
-}
