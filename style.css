@@ -10,7 +10,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #333;
+    background-image: url('4_estacoes.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,33 +37,27 @@ h1 {
 .busca button {
     padding: 10px;
     font-size: 15px;
-    border-radius: 50px;
-background: #555555;
-box-shadow:  20px 20px 60px #484848,
-             -20px -20px 60px #626262;
-
-             color: #FFF;
-             cursor: pointer;
-/*
-    border: 0;
-    background-color: #555;
-    
     border-radius: 5px;
-    margin-left: 10px;
-    */
-    
+    background: #324001;
+    box-shadow:  20px 20px 60px #2b3601,
+                -20px -20px 60px #3a4a01;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 10px;    
 }
 .busca button:hover {
-    background-color: #444;
+    background-color: #0367A6;
 }
 
 .resultado {
     width: 300px;
     display: none;
-    border: 1px dotted #FFF;
+    border: 1px solid #FFF;
     margin-top: 20px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 6px 6px 6px #888;
 }
 
 .titulo {
@@ -86,13 +83,13 @@ box-shadow:  20px 20px 60px #484848,
 }
 .tempTitulo,
 .ventoTitulo {
-    color: #777;
+    color: #010440;
     font-size: 16px;
     margin-bottom: 5px;
 }
 .tempInfo,
 .ventoInfo {
-    color: #FFF;
+    color: #E6F2BB;
     font-size: 30px;
     font-weight: bold;
 }
@@ -128,6 +125,6 @@ box-shadow:  20px 20px 60px #484848,
 
 footer {
     margin-top: 20px;
-    color: #FFF;
-    font-size: 13px;
+    color: whitesmoke;
+    font-size: 15px;
 }
